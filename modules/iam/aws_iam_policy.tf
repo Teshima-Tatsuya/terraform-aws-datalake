@@ -14,3 +14,8 @@ resource "aws_iam_policy" "web-server" {
   name = "web-server_datalake"
   policy = data.aws_iam_policy_document.web-server.json
 }
+
+resource "aws_iam_policy" "lambda-for-datalake" {
+  name = "lambda-for-datalake"
+  policy = data.aws_iam_policy_document.lambda-for-datalake.json
+}

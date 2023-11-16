@@ -3,6 +3,6 @@ resource "aws_lambda_function" "main" {
     handler = "index.handler"
     runtime = "python3.8"
     timeout = 300
-    filename      = "${path.module}/archive/index.zip" 
+    filename      = data.archive_file.output_path
     role = var.role.arn
 }
