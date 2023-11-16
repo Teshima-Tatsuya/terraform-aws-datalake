@@ -1,5 +1,5 @@
 resource "aws_launch_template" "web" {
-  name        = "teshima-lt-web"
+  name        = "teshima-lt-wordpress"
   description = "launch template for web"
 
   image_id      = "ami-0e0602b37ad08dce6"

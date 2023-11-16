@@ -24,6 +24,7 @@ resource "aws_rds_cluster_parameter_group" "main" {
       value = "QUERY"
     }
     parameter {
+      apply_method = "pending-reboot"
       name = "log_output"
       value = "FILE"
     }

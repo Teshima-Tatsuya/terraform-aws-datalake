@@ -5,7 +5,7 @@ resource "aws_rds_cluster" "main" {
     master_password = "Passw0rd"
     db_subnet_group_name = aws_db_subnet_group.main.id
     engine = "aurora-mysql"
-    engine_version = "5.7.mysql_aurora.2.11.4"
+    engine_version = "5.7.mysql_aurora.2.11.3"
     engine_mode = "serverless"
     vpc_security_group_ids = [var.vpc.sg.teshima-sg-rds.id]
     db_cluster_parameter_group_name = aws_rds_cluster_parameter_group.main.name
