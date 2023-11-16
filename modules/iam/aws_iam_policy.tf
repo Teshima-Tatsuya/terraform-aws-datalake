@@ -19,3 +19,8 @@ resource "aws_iam_policy" "lambda-for-datalake" {
   name = "lambda-for-datalake"
   policy = data.aws_iam_policy_document.lambda-for-datalake.json
 }
+
+resource "aws_iam_policy" "firehost-to-s3" {
+  name = "firehose-to-s3"
+  policy = data.aws_iam_policy_document.firehose-to-s3.json
+}
