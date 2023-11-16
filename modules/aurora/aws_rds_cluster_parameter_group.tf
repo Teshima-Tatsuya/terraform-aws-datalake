@@ -1,6 +1,6 @@
 resource "aws_rds_cluster_parameter_group" "main" {
     name = "cluster-pg-for-wp"
-    family = "aurora-mysql8.0"
+    family = "aurora-mysql5.7"
     description = "for datalake"
 
     parameter {
