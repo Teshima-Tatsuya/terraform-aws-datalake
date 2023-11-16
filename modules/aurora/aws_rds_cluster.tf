@@ -1,4 +1,5 @@
 resource "aws_rds_cluster" "main" {
+    cluster_identifier = "teshima-datalake"
     database_name = "teshimawp"
     master_username = "teshima"
     master_password = "Passw0rd"
