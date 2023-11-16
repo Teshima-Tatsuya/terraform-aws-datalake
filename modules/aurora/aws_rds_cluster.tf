@@ -1,7 +1,7 @@
 resource "aws_rds_cluster" "main" {
     database_name = "teshimawp"
     master_username = "teshima"
-    master_password = "teshima"
+    master_password = "P@ssw0rd"
     db_subnet_group_name = aws_db_subnet_group.main.id
     engine = "aurora-mysql"
     engine_mode = "serverless"
