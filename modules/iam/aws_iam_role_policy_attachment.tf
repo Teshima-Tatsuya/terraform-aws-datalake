@@ -17,6 +17,6 @@ resource "aws_iam_role_policy_attachment" "web-server_s3" {
 }
 
 resource "aws_iam_role_policy_attachment" "lambda-for-datalake" {
-  role       = aws_iam_role.lambda-role.arn
+  role       = aws_iam_role.lambda-role.name
   policy_arn = aws_iam_policy.lambda-for-datalake.arn
 }
