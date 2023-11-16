@@ -46,14 +46,15 @@ data "aws_iam_policy_document" "firehose-to-s3" {
   statement {
     sid = "1"
     actions = ["s3:*"]
+    effect = "Allow"
     resources = [
-      "arn:aws::s3:::teshima-tokyo-bucket",
-      "arn:aws::s3:::teshima-tokyo-bucket/*"
+      "arn:aws::s3:::*"
     ]
   }
 
   statement {
     actions = ["lambda:InvokeFunction", "lambda:GetFunctionConfiguration", "logs:*", "kms:*"]
+    effect = "Allow"
     resources = [
       "*"
     ]
