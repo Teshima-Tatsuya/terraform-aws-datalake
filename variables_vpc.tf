@@ -60,7 +60,10 @@ variable "sg" {
     },
     "teshima-sg-efs" = {
       description = "for efs server"
-    }
+    },
+    "teshima-sg-rds" = {
+      description = "for rds mysql"
+    },
   }
 }
 
@@ -128,6 +131,15 @@ variable "sg_rule" {
         to = 2049
         protocol = "TCP"
         cidr = "0.0.0.0/0"
-    }
+    },
+    "teshima-sg-rds-ingress-mysql" = {
+        sg = "teshima-sg-rds"
+        type = "ingress"
+        description = "mysql"
+        from = 3306
+        to = 3306
+        protocol = "TCP"
+        cidr = "0.0.0.0/0"
+    },
   }
 }

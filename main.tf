@@ -18,3 +18,9 @@ module "efs" {
 
   vpc = module.vpc.vpc
 }
+
+module "aurora" {
+  source = "./modules/aurora"
+
+  vpc = module.vpc.vpc
+}
