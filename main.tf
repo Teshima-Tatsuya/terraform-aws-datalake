@@ -24,3 +24,14 @@ module "aurora" {
 
   vpc = module.vpc.vpc
 }
+
+module "iam" {
+  source = "./modules/iam"
+}
+module "web-server" {
+  source = "./modules/web-server"
+
+  vpc = module.vpc.vpc
+  iam = module.iam.iam
+  elb = module.elb.elb
+}
