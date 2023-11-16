@@ -9,6 +9,7 @@ resource "aws_rds_cluster" "main" {
     engine_mode = "serverless"
     vpc_security_group_ids = [var.vpc.sg.teshima-sg-rds.id]
     db_cluster_parameter_group_name = aws_rds_cluster_parameter_group.main.name
+    skip_final_snapshot = true
 
     scaling_configuration {
         auto_pause               = true
