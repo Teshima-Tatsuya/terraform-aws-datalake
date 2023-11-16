@@ -21,7 +21,7 @@ data "aws_iam_policy_document" "web-server" {
 data "aws_iam_policy_document" "lambda-for-datalake" {
   statement {
     sid = "1"
-    actions = ["kinesis:*","firehose:*""klogs:*","kms:*"]
+    actions = ["kinesis:*","firehose:*","klogs:*","kms:*"]
     resources = [
       "*"
     ]
