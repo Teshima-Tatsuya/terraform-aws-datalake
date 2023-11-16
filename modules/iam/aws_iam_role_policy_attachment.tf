@@ -20,6 +20,6 @@ resource "aws_iam_role_policy_attachment" "lambda-for-datalake" {
   policy_arn = aws_iam_policy.lambda-for-datalake.arn
 }
 resource "aws_iam_role_policy_attachment" "firehose-to-s3" {
-  role       = aws_iam_role.firehost-to-s3.name
+  role       = aws_iam_role.firehose-to-s3.name
   policy_arn = aws_iam_policy.firehose-to-s3.arn
 }
