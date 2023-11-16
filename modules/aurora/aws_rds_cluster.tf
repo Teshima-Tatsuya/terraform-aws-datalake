@@ -1,5 +1,5 @@
 resource "aws_rds_cluster" "main" {
-    database_name = "teshima-wp"
+    database_name = "teshimawp"
     master_username = "teshima"
     master_password = "teshima"
     db_subnet_group_name = aws_db_subnet_group.main.id
