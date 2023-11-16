@@ -35,3 +35,13 @@ module "web-server" {
   iam = module.iam.iam
   elb = module.elb.elb
 }
+
+module "lambda" {
+  source = "./modules/lambda"
+
+  role       = module.iam.iam.role_lambda
+
+  depends_on = [
+    module.iam
+  ]
+}
