@@ -12,3 +12,9 @@ module "vpc" {
   sg           = var.sg
   sg_rule      = var.sg_rule
 }
+
+module "efs" {
+  source = "./modules/efs"
+
+  vpc = module.vpc.vpc
+}

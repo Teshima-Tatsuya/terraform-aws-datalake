@@ -57,6 +57,9 @@ variable "sg" {
     },
     "teshima-sg-web" = {
       description = "for web server"
+    },
+    "teshima-sg-efs" = {
+      description = "for efs server"
     }
   }
 }
@@ -114,6 +117,15 @@ variable "sg_rule" {
         description = "http"
         from = 443
         to = 443
+        protocol = "TCP"
+        cidr = "0.0.0.0/0"
+    },
+    "teshima-sg-efs-ingress-nfs" = {
+        sg = "teshima-sg-efs"
+        type = "ingress"
+        description = "nfs"
+        from = 2049
+        to = 2049
         protocol = "TCP"
         cidr = "0.0.0.0/0"
     }
