@@ -21,22 +21,6 @@ resource "aws_kinesis_firehose_delivery_stream" "main" {
                     parameter_name = "LambdaArn"
                     parameter_value = var.lambda.arn
                 }
-                parameters {
-                    parameter_name = "NumberOfRetries"
-                    parameter_value = "3"
-                }
-                parameters {
-                    parameter_name = "RoleArn"
-                    parameter_value = var.role.arn
-                }
-                parameters {
-                    parameter_name = "BufferSizeInMBs"
-                    parameter_value = "3"
-                }
-                parameters {
-                    parameter_name = "BufferIntervalInSeconds"
-                    parameter_value = "60"
-                }
             }
         }
     }
