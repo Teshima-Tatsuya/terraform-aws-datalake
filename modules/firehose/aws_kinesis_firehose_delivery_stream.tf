@@ -1,11 +1,13 @@
 resource "aws_kinesis_firehose_delivery_stream" "main" {
-    name = "datalake-aurora-audit-logs"
+    for_each = var.kinesis
+
+    name = each.value.name
     destination = "extended_s3"
 
     extended_s3_configuration {
         bucket_arn = "arn:aws:s3:::teshima-tokyo-bucket"
         role_arn = var.role.arn
-        prefix = "datalake/firehose/aurora_audit_logs/"
+        prefix = each.value.prefix
         compression_format = "UNCOMPRESSED"
         buffering_interval = 60
         buffering_size = 50
