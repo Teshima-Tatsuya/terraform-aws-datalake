@@ -23,7 +23,7 @@ resource "aws_kinesis_firehose_delivery_stream" "main" {
                 }
                 parameters {
                     parameter_name = "NumberOfRetries"
-                    parameter_value = 3
+                    parameter_value = "3"
                 }
                 parameters {
                     parameter_name = "RoleArn"
@@ -31,11 +31,11 @@ resource "aws_kinesis_firehose_delivery_stream" "main" {
                 }
                 parameters {
                     parameter_name = "BufferSizeInMBs"
-                    parameter_value = 3
+                    parameter_value = "3"
                 }
                 parameters {
                     parameter_name = "BufferIntervalInSeconds"
-                    parameter_value = 60
+                    parameter_value = "60"
                 }
             }
         }
