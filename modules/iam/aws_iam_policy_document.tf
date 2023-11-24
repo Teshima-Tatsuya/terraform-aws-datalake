@@ -50,12 +50,12 @@ data "aws_iam_policy_document" "firehose-to-s3" {
     ]
   }
 
-  statement {
-    actions = ["lambda:InvokeFunction", "lambda:GetFunctionConfiguration", "logs:*", "kms:*"]
-    resources = [
-      "*"
-    ]
-  }
+  # statement {
+  #   actions = ["lambda:InvokeFunction", "lambda:GetFunctionConfiguration", "logs:*", "kms:*"]
+  #   resources = [
+  #     "*"
+  #   ]
+  # }
 }
 
 data "aws_iam_policy_document" "assume_role_firehose" {
