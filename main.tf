@@ -46,11 +46,12 @@ module "lambda" {
   ]
 }
 
-module "firehose" {
-  source = "./modules/firehose"
+module "kinesis" {
+  source = "./modules/kinesis"
 
   role       = module.iam.iam.role_firehose
   lambda     = module.lambda.lambda.transformation
+  kinesis    = var.firehose
 
   depends_on = [
     module.iam
