@@ -44,6 +44,7 @@ data "aws_iam_policy_document" "lambda-for-datalake" {
 
 data "aws_iam_policy_document" "firehose-to-s3" {
   statement {
+    sid = "1"
     actions = ["s3:*"]
     resources = [
       "arn:aws:s3:::*"
