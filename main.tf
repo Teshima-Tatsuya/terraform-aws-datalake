@@ -57,3 +57,9 @@ module "kinesis" {
     module.iam
   ]
 }
+
+module "cloudwatch" {
+  source = "./modules/cloudwatch"
+
+  aurora       = module.aurora.aurora.cluster
+}
