@@ -14,7 +14,20 @@ data "aws_iam_policy_document" "assume_role" {
 
     principals {
       type        = "Service"
-      identifiers = ["lambda.amazonaws.com"]
+      identifiers = ["lambda.${data.aws_region.current.name}.amazonaws.com"]
+    }
+
+    actions = ["sts:AssumeRole"]
+  }
+}
+
+data "aws_iam_policy_document" "assume_role_cloudwatch_logs" {
+  statement {
+    effect = "Allow"
+
+    principals {
+      type        = "Service"
+      identifiers = ["logs.amazonaws.com"]
     }
 
     actions = ["sts:AssumeRole"]
@@ -48,6 +61,23 @@ data "aws_iam_policy_document" "firehose-to-s3" {
     actions = ["s3:*"]
     resources = [
       "arn:aws:s3:::*"
+    ]
+  }
+
+  statement {
+    actions = ["lambda:InvokeFunction", "lambda:GetFunctionConfiguration", "logs:*", "kms:*"]
+    resources = [
+      "*"
+    ]
+  }
+}
+
+data "aws_iam_policy_document" "cloudwatch-logs-to-s3" {
+  statement {
+    sid = "1"
+    actions = ["firehose:*"]
+    resources = [
+      "arn:aws:firehose:${data.aws_region.current.name}:${data.aws_caller_identity.current.account_id}:*"
     ]
   }
 

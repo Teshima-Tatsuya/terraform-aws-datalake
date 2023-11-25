@@ -24,3 +24,8 @@ resource "aws_iam_policy" "firehose-to-s3" {
   name = "firehose-to-s3"
   policy = data.aws_iam_policy_document.firehose-to-s3.json
 }
+
+resource "aws_iam_policy" "cloudwatch-logs-to-s3" {
+  name = "cloudwatch-logs-to-s3"
+  policy = data.aws_iam_policy_document.cloudwatch-logs-to-s3.json
+}

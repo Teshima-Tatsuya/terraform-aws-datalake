@@ -62,4 +62,6 @@ module "cloudwatch" {
   source = "./modules/cloudwatch"
 
   aurora       = module.aurora.aurora.cluster
+  role         = module.iam.iam.role_cloudwatch_logs
+  kinesis      = module.kinesis.kinesis.firehose
 }

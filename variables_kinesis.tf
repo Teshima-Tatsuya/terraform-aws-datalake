@@ -12,9 +12,9 @@ variable "firehose" {
       name = "datalake-aurora-general-logs"
       prefix = "datalake/firehose/aurora_general_logs"
     },
-    "slow-query" = {
-      name = "datalake-aurora-slow-query-logs"
-      prefix = "datalake/firehose/aurora_slow_query_logs"
+    "slowquery" = {
+      name = "datalake-aurora-slowquery-logs"
+      prefix = "datalake/firehose/aurora_slowquery_logs"
     },
   }
 }

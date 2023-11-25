@@ -13,3 +13,8 @@ resource "aws_iam_role" "firehose-to-s3" {
   name = "firehose-to-s3"
   assume_role_policy = data.aws_iam_policy_document.assume_role_firehose.json
 }
+
+resource "aws_iam_role" "cloudwatch-logs-to-s3" {
+  name = "cloudwatch-logs-to-s3"
+  assume_role_policy = data.aws_iam_policy_document.assume_role_cloudwatch_logs.json
+}
